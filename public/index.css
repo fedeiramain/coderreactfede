@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    color: white;
+    
+}
+
+.body {
+    background-color: rgb(231, 229, 229);
+}
+
+.container {
+    background-color: black;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    border-radius: 5px;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    gap: 1rem;
+    align-items: center;
+}
+
+.menu-item a {
+    text-decoration: none;
+    font-size: 25px;
+    border: solid gray 2px;
+    border-radius: 1rem;
+    margin-top: 20px;
+    padding: 0.5rem;
+    color: white;
+}
+
+.menu-item a:hover {
+    background-color: white;
+    color: black;
+}
+
+.img-logo {
+    width: 100px;
+}
+
+.form-inline {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    margin-inline: 1rem;
+    font-size: 20px;
+}
+
+.carrito {
+    display: flex;
+    padding-top: 10px;
+    padding-inline: 5px;
+    border: solid 3px gray;
+    border-radius: 10px;
+}
+
+.carrito:hover {
+    background-color: blue;
+    cursor: pointer;
+}
+
+.mi-carrito {
+    display: flex;
+    gap: 5px;
+    color: white;
+}
+
+/* Listado */
+
+.titulo-principal {
+    color: blue;
+    text-transform: uppercase;
+}
+
+.listado {
+    margin: 5px;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    border: solid red 2px;
+    border-radius: 5px;
+    gap: 10px;
+}
+
+.listado-detalle {
+    margin: 5px;
+    padding: 1rem;
+    display: flex;
+    border: solid red 2px;
+    border-radius: 5px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    border: solid yellow 2px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: gray;
+}
+
+.item-detalle {
+    display: flex;
+    border: solid yellow 2px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: gray;
+}
+
+.detalle {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.img-prod {
+    max-width: 100%;
+}
+
+.img-detalle {
+    max-width: 30%;
+}
+
+.boton-info {
+    width: 30%;
+    border: none;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    padding: 5px;
+    background-color: blue;
+    color: white;
+}
+
+.boton-info:hover {
+    background-color: white;
+    color: blue;
+}
+
+h5 {
+    color: red;
+}
+
+/* Footer */
+
+.titulo-footer {
+    color: blue;
+    font-size: 20px;
+    padding: 1rem;
+}
+
+/* Contador */
+
+.cantidad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.titulo-cantidad {
+    font-size: 35px;
+    padding-top: 15px;
+}
+
+.sumar {
+    background-color: transparent;
+    border: none;
+    color: white;
+    border-radius: 1rem;
+    font-size: 30px;
+    padding: 0;
+}
+
+.sumar:hover {
+    scale: 1.1;
+    color: blue;
+}
+
+.restar {
+    background-color: transparent;
+    border: none;
+    color: white;
+    border-radius: 1rem;
+    font-size: 30px; 
+}
+
+.restar:hover {
+    scale: 1.3;
+    color: red;
+}
+
+.numero {
+    padding-top: 20px;
+    font-size: 30px;
+}
+
+.agregar-prod {
+    background-color: transparent;
+    border: solid 2px white;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+.agregar-prod:hover {
+    background-color: white;
+    color: gray;
+}
+
+/* Carrito */
+
+.productos-carrito {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.prod-carrito {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: solid blue 2px;
+    border-radius: 1rem;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: gray;
+    color: black;
+}
+
+.btn-eliminar {
+    background-color: transparent;
+    border: solid white 2px;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 5px;
+    font-size: 20px;
+}
+
+/* Login */
+
+.input-usuario {
+    background-color: white;
+    color: black;
+}
+
+/* Carrito */
+
+.fa-cart-shopping {
+    font-size: 30px;
+}
+
+.cantidad-carrito {
+    font-size: 30px;
+}
