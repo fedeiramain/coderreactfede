@@ -14,9 +14,14 @@ const Carrito = () => {
         setCart(carrito);
     };
 
+    const vaciar = () => {
+      
+      setCart([])
+    };
+
     useEffect(() => {
         localStorage.setItem("carrito", JSON.stringify(cart))
-    }, [cart])
+    }, [cart]);
   
     return (
       <div>
@@ -45,8 +50,16 @@ const Carrito = () => {
             })
           }
         </div>
-        {cart.length > 0 ? <h3>Cantidad: {subTotal}</h3> : <p className="text-warning">Seleccione sus Productos</p>}
-        
+        {cart.length > 0 ? 
+          <div>
+            <h3>Cantidad: {subTotal}</h3>
+            <div>
+              <button type="button" class="btn btn-danger" onClick={vaciar}>Vaciar</button>
+              <button type="button" class="btn btn-success">Ir a Pagar</button>
+              </div>
+          </div>  
+             : <p className="text-warning">Seleccione sus Productos</p>}
+      
   
       </div>
     )
