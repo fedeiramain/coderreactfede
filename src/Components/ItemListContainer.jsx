@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom";
-import { traerProductos } from "../data/traerDatos";
-
+import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
     const [productos, setProductos] = useState();
@@ -9,16 +8,21 @@ const ItemListContainer = () => {
     
 
     useEffect(() => {
-      traerProductos()
-        .then((data) => {
+      const db = getFirestore();
+      const queryCollection = collection(db, "productos");
+      
+      
           if (categoria) {
-            setProductos(data.filter(prod => prod.categoria === categoria))
+            const collectionFilter = query(queryCollection, where("categoria", "==", categoria))
+            getDocs(collectionFilter)
+              .then(res => setProductos(res.docs.map(p => ({ id: p.id, ...p.data()}))))
           } else {
-            setProductos(data)
+            getDocs(queryCollection)
+              .then(res => setProductos(res.docs.map(p => ({ id: p.id, ...p.data()}))))
           }
         }
-         )  
-    }, [categoria]);
+          
+    , [categoria]);
 
       
     

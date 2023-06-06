@@ -24,7 +24,7 @@ const Carrito = () => {
     }, [cart]);
   
     return (
-      <div>
+      <div className="compras">
         <h1 className="text-primary">Mi Compra</h1>
         <div className="productos-carrito">
           {
@@ -43,7 +43,7 @@ const Carrito = () => {
                     <h3>Total</h3>
                     <p>{prod.cantidad * prod.precio}</p>
                   </div>
-                  <button className="btn-eliminar" onClick={() => eliminar(prod.id)}>Eliminar</button>
+                  <button className="btn-eliminar" onClick={() => eliminar(prod.id)}><i class="fa-solid fa-trash-can"></i></button>
                 </div>
   
               )
@@ -51,7 +51,7 @@ const Carrito = () => {
           }
         </div>
         {cart.length > 0 ? 
-          <div>
+          <div className="totales">
             <h3>Cantidad: {subTotal}</h3>
             <div>
               <button type="button" class="btn btn-danger" onClick={vaciar}>Vaciar</button>

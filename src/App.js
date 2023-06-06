@@ -8,7 +8,7 @@ import Carrito from "./Components/Carrito/Carrito";
 
 function App() {
   return (
-    <div className="container">
+    <div>
       <BrowserRouter>
       <CartShop>
       <NavBar />

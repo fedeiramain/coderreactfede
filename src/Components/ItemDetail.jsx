@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { traerItem } from "../data/traerDatos";
 import Items from "./Items";
-
+import { getFirestore, getDoc, doc } from "firebase/firestore";
 
 const ItemDetail = () => {
 
@@ -10,9 +9,11 @@ const ItemDetail = () => {
     const idItem = useParams().id;
 
     useEffect(() => {
-          traerItem(Number(idItem))
-            .then(res => setItem(res))
-    })
+          const db = getFirestore();
+          const queryDoc = doc(db,"productos", idItem);
+          getDoc(queryDoc)
+            .then(res => setItem({ id: res.id, ...res.data() }))
+    }, [idItem])
   return (
     <div>
         {item && <Items item={item} />}
