@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 import { CartContext } from "../CartContext/CartContext";
+import { Link } from "react-router-dom";
 
 
 
@@ -22,6 +23,8 @@ const Carrito = () => {
     useEffect(() => {
         localStorage.setItem("carrito", JSON.stringify(cart))
     }, [cart]);
+
+    
   
     return (
       <div className="compras">
@@ -55,7 +58,7 @@ const Carrito = () => {
             <h3>Cantidad: {subTotal}</h3>
             <div>
               <button type="button" class="btn btn-danger" onClick={vaciar}>Vaciar</button>
-              <button type="button" class="btn btn-success">Ir a Pagar</button>
+              <Link to="/pagar"><button type="button" class="btn btn-success">Ir a Pagar</button></Link>
               </div>
           </div>  
              : <p className="text-warning">Seleccione sus Productos</p>}
