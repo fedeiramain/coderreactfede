@@ -11,7 +11,6 @@ const ItemListContainer = () => {
       const db = getFirestore();
       const queryCollection = collection(db, "productos");
       
-      
           if (categoria) {
             const collectionFilter = query(queryCollection, where("categoria", "==", categoria))
             getDocs(collectionFilter)

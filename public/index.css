@@ -263,6 +263,24 @@ h5 {
     font-size: 30px;
 }
 
+/* Form */
+
+.form {
+    width: 60%;
+    padding: 1rem;
+    border: solid 3px green;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    color: black;
+}
+
+
 /* Media */
 
 @media screen and (max-width: 1000px) {

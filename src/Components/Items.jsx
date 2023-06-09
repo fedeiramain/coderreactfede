@@ -30,7 +30,6 @@ const Items = ({ item }) => {
         carrito.push(agregado);
       }
       setCart(carrito)
-      console.log(cart);
     };
   
   
