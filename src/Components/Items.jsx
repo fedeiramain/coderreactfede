@@ -36,6 +36,7 @@ const Items = ({ item }) => {
     return (
       
       <div className="listado-detalle">
+        <h1>Caracteristicas</h1>
                   <div className="item-detalle">
                     <img src={item.img} className="img-detalle" alt={item.nombre} />
                     <div className="detalle">
