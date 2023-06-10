@@ -37,15 +37,15 @@ const Items = ({ item }) => {
       
       <div className="listado-detalle">
         <h1>Caracteristicas</h1>
-                  <div className="item-detalle">
-                    <img src={item.img} className="img-detalle" alt={item.nombre} />
-                    <div className="detalle">
-                      <h3>{item.nombre}</h3>
-                      <p>${item.precio}</p>
-                      <p>{item.description}</p> 
-                      {<ItemsCount cantidad={cantidad} aumentar={aumentar} disminuir={disminuir} agregar={agregar} />}
-                    </div>
-                  </div>
+        <div className="item-detalle">
+          <img src={item.img} className="img-detalle" alt={item.nombre} />
+          <div className="detalle">
+            <h3>{item.nombre}</h3>
+            <p>${item.precio}</p>
+            <p>{item.description}</p>
+            {<ItemsCount cantidad={cantidad} aumentar={aumentar} disminuir={disminuir} agregar={agregar} />}
+          </div>
+        </div>
       </div>
     )
   }

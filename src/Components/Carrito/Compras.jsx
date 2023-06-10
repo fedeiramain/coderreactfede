@@ -5,18 +5,20 @@ import { Timestamp, addDoc, collection, getFirestore } from "firebase/firestore"
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { CartContext } from "../CartContext/CartContext";
+import { Link } from "react-router-dom";
 
 const Compras = () => {
 
-  const { cart, setCart } = useContext(CartContext);
+  const { cart, setCart, setOrderId } = useContext(CartContext);
   const { register, handleSubmit } = useForm();
   const [user, setUser] = useState([]);
-  const [orderId, setOrderId] = useState([]);
 
   const registro = (data) => {
-    setUser(data)
+    setUser(data);
     
   };
+
+  console.log(user)
 
   const subTotal = cart.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0);
   const subCantidad = cart.reduce((acc, prod) => acc + prod.cantidad, 0);
@@ -35,19 +37,19 @@ const Compras = () => {
       .then(({ id }) => setOrderId(id));
   
     setCart([]);
+    setUser([]);
   }
-
 
   return (
     <div className="container">
       <div>
-
-        {!user &&
           <div>
             <h1>Registre sus Datos</h1>
             <h3>Productos: {subCantidad}</h3>
             <h3>Total: $ {subTotal}</h3>
-            <form className="form" onSubmit={handleSubmit(registro)}>
+           <div>
+            </div>
+              <form className="form" id="formid" onSubmit={handleSubmit(registro)}>
               <div>
                 <label className="form-datos" htmlFor="">Nombre:</label>
                 <input type="text"
@@ -71,13 +73,10 @@ const Compras = () => {
               </div>
               <button className="btn btn-success registrar" type='submit'>Registrar</button>
             </form>
-            {user && <button className="btn btn-success mt-3" onClick={handlePagar}>Pagar</button>}
+            {user.mail && 
+            <Link to="/checkout">
+              <button className="btn btn-success mt-3" id="pagar" onClick={handlePagar}>Pagar</button></Link>}
           </div>
-        }
-        <br />
-        {orderId.length > 4 ? "Su Compra fue Realizada!" : "Complete Su Compra"}
-        <br />
-        {orderId}
       </div>
     </div>
   )

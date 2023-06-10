@@ -6,6 +6,7 @@ import NavBar from "./Components/NavBar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import Carrito from "./Components/Carrito/Carrito";
 import Compras from "./Components/Carrito/Compras";
+import CheckOut from "./Components/Carrito/CheckOut";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/item/:id" element={<ItemDetail />} />
       <Route path="/carrito" element={<Carrito />} />
       <Route path="/pagar" element={<Compras />} />
+      <Route path="/checkout" element={<CheckOut />} />
       </Routes>
       <Footer />
       </CartShop>
