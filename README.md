@@ -68,3 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### DEPENDENCIAS
+
+Se uso para parte de Maquetado BOOTSTRAP v 4.6
+Se uso para para algunos iconos por medio de FONTAWESOME 
+Para la carga de datos se vinculo la libreria por medio de FIREBASE
